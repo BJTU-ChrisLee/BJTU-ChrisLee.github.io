@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>test | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前言在学习屈婉玲、耿素云、张立昂主编的《离散数学(第2版)》时，老师介绍P306页的定理14.9（课本上略去了其证明）时说其和定理14.8的证明很像，课上我提出了怀疑，之后在复习时思考了该定理的证明，并且最终写出了证明方法，特此分享出来   （上为课本原文） 证明目标我们需要证明的是：对于有向图$  D&#x3D;&lt;V,E&gt;$ ，$ D$ 是单向连通图 当且仅当 $ D$ 中存在经过每个顶点至少">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://example.com/2021/03/11/test/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言在学习屈婉玲、耿素云、张立昂主编的《离散数学(第2版)》时，老师介绍P306页的定理14.9（课本上略去了其证明）时说其和定理14.8的证明很像，课上我提出了怀疑，之后在复习时思考了该定理的证明，并且最终写出了证明方法，特此分享出来   （上为课本原文） 证明目标我们需要证明的是：对于有向图$  D&#x3D;&lt;V,E&gt;$ ，$ D$ 是单向连通图 当且仅当 $ D$ 中存在经过每个顶点至少">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/03/11/test/单向连通图判定定理的证明资源库/截屏2021-03-11%2021.01.12.png">
+<meta property="og:image" content="http://example.com/2021/03/11/test/单向连通图判定定理的证明资源库/截屏2021-03-11%2021.09.08.png">
+<meta property="article:published_time" content="2021-03-11T15:49:03.000Z">
+<meta property="article:modified_time" content="2021-03-11T15:49:42.748Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/11/test/单向连通图判定定理的证明资源库/截屏2021-03-11%2021.01.12.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/11/test/" class="article-date">
+  <time class="dt-published" datetime="2021-03-11T15:49:03.000Z" itemprop="datePublished">2021-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      test
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在学习屈婉玲、耿素云、张立昂主编的《离散数学(第2版)》时，老师介绍P306页的定理14.9（课本上略去了其证明）时说其和定理14.8的证明很像，课上我提出了怀疑，之后在复习时思考了该定理的证明，并且最终写出了证明方法，特此分享出来</p>
+<img src="单向连通图判定定理的证明资源库/截屏2021-03-11 21.01.12.png" style="zoom:50%;" />
+
+<p>（上为课本原文）</p>
+<h1 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>我们需要证明的是：对于有向图$  D=&lt;V,E&gt;$ ，$ D$ 是单向连通图 当且仅当 $ D$ 中存在经过每个顶点至少一次的通路</p>
+<p>右推左很显然，我们这里证明左推右，也就是：对于有向图$  D=&lt;V,E&gt;$ ，$ D$ 是单向连通图 可以推得 $ D$ 中存在经过每个顶点至少一次的通路</p>
+<p><strong>在所有证明过程中会自动删去自环和平行边，因为它们显然不影响结论的正确性</strong></p>
+<h2 id="符号和名词解释"><a href="#符号和名词解释" class="headerlink" title="符号和名词解释"></a>符号和名词解释</h2><ul>
+<li>DAG：即Directed Acyclic Graph，中文是有向无环图，指一个没有圈的有向图，也就是这里的环实际上指的是圈（事实上百度“有向无圈图”会被定向到“有向无环图”）</li>
+<li>$ d_{D}^{-}(u)$ ：有向图$ D$ 中结点$ u$ 的入度。如果可以根据上下文判断应该是哪张图，则$ D$ 可能会被省略</li>
+<li>$ u\to v$ ：$ u$ 单向可达$ v$ </li>
+<li>$ u\leftrightarrow v$ ：$ u$ 和$ v$ 双向可达。也使用$ \leftrightarrow$ 表示“双向可达”关系</li>
+<li>$ D[V’]$ ：有向图$ D$ 由点集$ V’$ 导出的子图</li>
+<li>$ \Gamma(u,v)$ ：$ u$ 到$ v$ 的一条通路。根据通路的不同这里可能加上各种下标、上标</li>
+</ul>
+<h2 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h2><p>有下面几条引理，按编号为</p>
+<ol>
+<li><p>DAG的子图一定是一个DAG</p>
+</li>
+<li><p>对于有向图$ D=&lt;V,E&gt;$ ，若其为DAG，那么对于$ \forall w\in V$ ，必然可以将除了$ w$ 剩下的点集$ V-{w}$ 划分成两个部分：$ U_w$ 和$ V_w$ ，其中$ \forall u\in U_w,u\to w$ 、$ \forall v\in V_w,w\to v$ ，并且不存在任何一个点同时在两个部分中，即$ \nexists x\in V-{w} ,x\in U_w\ \wedge\ x\in V_w$ </p>
+<p>（可以$ \exists x\in V,x\notin U_w\ \wedge\ x\notin V_w$ ，也就是这里的划分不是严格的。后面证明的时候不会再提及这一点）</p>
+</li>
+<li><p>在上述的划分中，$ \forall u\in U_w,d_{D}^-(u)=d_{D[U_w]}^-(u)$ ，也就是分出来的子图$ D[U_w]$ 的点入度和$ D$ 保持一样</p>
+</li>
+<li><p>DAG必然存在入度为0的结点</p>
+</li>
+<li><p>单向连通的DAG有且只有一个入度为0的点</p>
+</li>
+<li><p>对于单向连通的有向图$ D=&lt;V,E&gt;$ ，去掉一个入度为零的点后，剩余点导出的子图一定也是单向连通的</p>
+<p>符号语言表述：对于单向连通的有向图$ D_0=&lt;V_0,E_0&gt;$ ，若有$ w\in V_0\ \wedge\ d_{D_0}^-(w)=0$ ，设$ V_1=V_0-{w}$ ，则$ D_1=D_0[V_1]$ 必然是单向连通的</p>
+</li>
+<li><p>对于一张一般的单向连通有向图$ D=&lt;V,E&gt;$ </p>
+<p>设$ V’=V/\leftrightarrow$ （也就是$ V’$ 是$ V$ 关于“相互可达”关系的商集）</p>
+<p>设$ E’={&lt;V_u,V_v&gt;\ \big|\ V_u\in V’\ \wedge\ V_v\in V’\ \wedge\ (\ \exists u,v(&lt;u,v&gt;\in E\ \wedge\ u\in V_u\ \wedge\ v\in V_v)\ )}$ </p>
+<p>则图$ D’=&lt;V’,E’&gt;$ 一定是单向连通的DAG</p>
+<p>（实际上7就是算法竞赛中强连通分量缩点的过程）</p>
+</li>
+</ol>
+<h3 id="引理-lt-1-gt-证明"><a href="#引理-lt-1-gt-证明" class="headerlink" title="引理&lt;1&gt;证明"></a>引理&lt;1&gt;证明</h3><p>引理&lt;1&gt;内容：DAG的子图一定是一个DAG</p>
+<p>证明：</p>
+<p>如果DAG的子图不是DAG，也就是有圈，那么其自身一定也有圈。所以DAG子图一定是DAG</p>
+<h3 id="引理-lt-2-gt-证明"><a href="#引理-lt-2-gt-证明" class="headerlink" title="引理&lt;2&gt;证明"></a>引理&lt;2&gt;证明</h3><p>引理&lt;2&gt;内容：对于有向图$ D=&lt;V,E&gt;$ ，若其为DAG，那么对于$ \forall w\in V$ ，必然可以将除了$ w$ 剩下的点集$ V-{w}$ 划分成两个部分：$ U_w$ 和$ V_w$ ，其中$ \forall u\in U_w,u\to w$ 、$ \forall v\in V_w,w\to v$ ，并且不存在任何一个点同时在两个部分中，即$ \nexists x\in V-{w} ,x\in U_w\ \wedge\ x\in V_w$ </p>
+<p>证明：</p>
+<p>因为如果存在这么一个$ x$ 的话，必然有$ x\to w\ \wedge\ w\to x$ ，即$ D$ 有圈，产生矛盾</p>
+<h3 id="引理-lt-3-gt-证明"><a href="#引理-lt-3-gt-证明" class="headerlink" title="引理&lt;3&gt;证明"></a>引理&lt;3&gt;证明</h3><p>引理&lt;3&gt;内容：在引理&lt;2&gt;的划分中，$ \forall u\in U_w,d_{D}^-(u)=d_{D[U_w]}^-(u)$ ，也就是分出来的子图$ D[U_w]$ 的点入度和$ D$ 保持一样</p>
+<p>证明：</p>
+<p>这里复述一下引理&lt;2&gt;：对于有向图$ D=&lt;V,E&gt;$ ，若其为DAG，那么对于$ \forall w\in V$ ，必然可以将除了$ w$ 剩下的点集$ V-{w}$ 划分成两个部分：$ U_w$ 和$ V_w$ ，其中$ \forall u\in U_w,u\to w$ 、$ \forall v\in V_w,w\to v$ ，并且不存在任何一个点同时在两个部分中，即$ \nexists x\in V-{w} ,x\in U_w\ \wedge\ x\in V_w$ 。</p>
+<p>我们再定义$ V_r=V-U_w-V_w$ ，也就是$ V_r$ 中的点与$ v_r$ 既不存在$ v_r\to w$ 也不存在$ w\to v_r$ </p>
+<p>假设$ u\in U_w$ 的$ d_{D[U_w]}^{-}(u)\neq d_{D}^-(u)$ </p>
+<p>首先显然不可能出现子图某个结点的入度大于母图的，也就是不可能$ d_{D[U_w]}^{-}(u)&gt;d_{D}^-(u)$ ，所以我们的假设可以变成$ d_{D[U_w]}^{-}(u)&lt;d_{D}^-(u)$ </p>
+<p>如果发生了$ d_{D[U_w]}^{-}(u)&lt;d_{D}^{-}(u)$ ，必然发生下面三种情况中的至少一种，但是这三种情况都会导致矛盾：</p>
+<ol>
+<li><p>$ \exists v\in V_w,&lt;v,u&gt;\in E$ </p>
+<p>这时必有$ u\to w$ ，$ w\to v$ ，$ v\to u$ ，也就是产生了圈，与$ D$ 是DAG矛盾</p>
+</li>
+<li><p>$ &lt;w,u&gt;\in E$ </p>
+<p>同样，这时必有$ u\to w$ ，$ w\to u$ ，也就是产生了圈，与$ D$ 是DAG矛盾</p>
+</li>
+<li><p>$ \exists v_r\in V_r,&lt;v_r,u&gt;\in E$ </p>
+<p>因为$ u\to w$ ，而$ v_r\to u$ ，所以应该有$ v_r\to w$ ，但是这与$ v_r\notin U_w$ 矛盾</p>
+</li>
+</ol>
+<p>因此引理&lt;3&gt;得证</p>
+<h3 id="引理-lt-4-gt-证明"><a href="#引理-lt-4-gt-证明" class="headerlink" title="引理&lt;4&gt;证明"></a>引理&lt;4&gt;证明</h3><p>引理&lt;4&gt;内容：DAG必然存在入度为0的结点</p>
+<p>证明：</p>
+<p>设$ D_0=&lt;V,E&gt;$ 是一张DAG，我们一定可以逐次求$ D_k$ 中某一点$ w$ 的$ U_w$ ，然后令$ D_{k+1}=D_{k}[U_w]$ ，由引理&lt;1&gt;可知$ D_{k+1}$ 一定是DAG。很容易看出来$ \big|V(D_{k+1})\big|&lt;\big|V(D_{k})\big|$ ，也就是这个图是不断缩小的，所以一定存在某一次$ D_k$ 导出的$ D_{k+1}=U_w=\varnothing$ ，也就是没有任何一个点可达$ w$ ，也就是$ d_{D_{k}}^{-}(w)=0$ </p>
+<p>根据引理&lt;3&gt;，可以得到$ d_{D_{0}}^-(w)=d_{D_{1}}^-(w)=\cdots=d_{D_{k}}^-(w)=0$ ，也就是$ D_0$ 这个DAG存在入度为0的点</p>
+<h3 id="引理-lt-5-gt-证明"><a href="#引理-lt-5-gt-证明" class="headerlink" title="引理&lt;5&gt;证明"></a>引理&lt;5&gt;证明</h3><p>引理&lt;5&gt;内容：单向连通的DAG有且只有一个入度为0的点</p>
+<p>证明：</p>
+<p>首先由引理&lt;4&gt;知一定有入度为0的点</p>
+<p>假设有两个入度为0的点$ u,v$ ，由于$ D$ 单向可达，故不妨让$ u\to v$ ，那么存在通路$ \Gamma =uw_1\cdots w_kv$ ，也就是有边$ &lt;w_k,v&gt;$ ，这与$ v$ 入度为0矛盾</p>
+<h3 id="引理-lt-6-gt-证明"><a href="#引理-lt-6-gt-证明" class="headerlink" title="引理&lt;6&gt;证明"></a>引理&lt;6&gt;证明</h3><p>引理&lt;6&gt;内容：对于单向连通的有向图$ D=&lt;V,E&gt;$ ，去掉一个入度为零的点后，剩余点导出的子图一定也是单向连通的</p>
+<p>符号语言表述：对于单向连通的有向图$ D_0=&lt;V_0,E_0&gt;$ ，若有$ w\in V_0\ \wedge\ d_{D_0}^-(w)=0$ ，设$ V_1=V_0-{w}$ ，则$ D_1=D_0[V_1]$ 必然是单向连通的</p>
+<p>证明：</p>
+<p>对$ \forall u,v\in V_1$ ，有$ u,v\in V_0$ ，并且由于$ D_0$ 单向连通，所以一定存在从$ u$ 到$ v$ 的通路$ \Gamma(u,v)$ ，且通路中一定没有$ w$ 。因为如果有的话就说明有边能到$ w$ ，这与$ d_{D_0}^-(w)=0$ 矛盾。正因为$ \Gamma(u,v)$ 中没有$ w$ ，所以$ \Gamma(u,v)$ 在$ D_1$ 中也一定是存在的</p>
+<p>因此$ D_1$ 是单向连通的</p>
+<h3 id="引理-lt-7-gt-证明"><a href="#引理-lt-7-gt-证明" class="headerlink" title="引理&lt;7&gt;证明"></a>引理&lt;7&gt;证明</h3><p>引理&lt;7&gt;描述：</p>
+<p>对于一张一般的单向连通有向图$ D=&lt;V,E&gt;$ </p>
+<p>设$ V’=V/\leftrightarrow$ （也就是$ V’$ 是$ V$ 关于“相互可达”关系的商集）</p>
+<p>设$ E’={&lt;V_u,V_v&gt;\ \big|\ V_u\in V’\ \wedge\ V_v\in V’\ \wedge\ (\ \exists u,v(&lt;u,v&gt;\in E\ \wedge\ u\in V_u\ \wedge\ v\in V_v)\ )}$ </p>
+<p>则图$ D’=&lt;V’,E’&gt;$ 一定是单向连通的DAG</p>
+<p>证明：</p>
+<p>首先证明$ D’$ 是无环的，也就是是一张DAG</p>
+<p>假设$ D’$ 有环，也就是$ \exists V_u,V_v\in V’,V_u\leftrightarrow V_v$ ，那么在$ D$ 中必然存在$ u\in V_u,v\in V_v$ ，使$ u\leftrightarrow v$ ，也就是在$ D$ 中$ V_u$ 和$ V_v$ 中有点可以互相到达，这必然导致$ V_u$ 与$ V_v$ 中任何一对点都是互相可达的，这与$ V_u,V_v\in V/\leftrightarrow$ 矛盾。所以$ D’$ 一定是有环的</p>
+<p>再证明$ D’$ 是单向连通的</p>
+<p>$ \forall V_u,V_v\in V’$ ，任取$ u\in V_u,v\in V_v$ ，由于$ D$ 是单向连通的，所以$  &lt;u,v&gt;\in E\ \vee\ &lt;v,u&gt;\in E$ ，也就是$ &lt;V_u,V_v&gt;\in E’\ \vee\ &lt;V_v,V_u&gt;\in E’$ ，所以$ D’$ 是单向连通的</p>
+<h2 id="对于DAG情况的构造"><a href="#对于DAG情况的构造" class="headerlink" title="对于DAG情况的构造"></a>对于DAG情况的构造</h2><p>我们会先构造DAG上的通路，也就是证明：对于DAG $  D=&lt;V,E&gt;$ ，$ D$ 是单向连通图 可以推得 $ D$ 中存在经过每个顶点至少一次的通路<br>（复述下，在最开始就说了，不考虑$ D$ 中的自环和平行边）</p>
+<p>之后再考虑一般有向图上的构造</p>
+<p>为了方便查看引理，我们把需要用到的引理搬过来：</p>
+<p>引理&lt;5&gt;：单向连通的DAG有且只有一个入度为0的点</p>
+<p>引理&lt;6&gt;内容：对于单向连通的有向图$ D=&lt;V,E&gt;$ ，去掉一个入度为零的点后，剩余点导出的子图一定也是单向连通的<br>符号语言表述：对于单向连通的有向图$ D_0=&lt;V_0,E_0&gt;$ ，若有$ w\in V_0\ \wedge\ d_{D_0}^-(w)=0$ ，设$ V_1=V_0-{w}$ ，则$ D_1=D_0[V_1]$ 必然是单向连通的</p>
+<p>对于单向连通DAG：$ D_0=&lt;V_0,E_0&gt;$ ，我们有如下过程：</p>
+<ol>
+<li>从$ D_k$ 中找到(唯一的)入度为0的点$ w_k$ ，根据引理&lt;5&gt;，这个点一定存在且只有一个</li>
+<li>令$ V_{k+1}=V_k-{w_k}$ ，$ D_{k+1}=D[V_{k+1}]$ ，根据引理&lt;6&gt;，$ D_{k+1}$ 也是单向连通的DAG。之后执行过程 1.，直到$ V_{k+1}=\varnothing$ </li>
+</ol>
+<p>在$ D_0$ 中一定有边$ &lt;w_k,w_{k+1}&gt;$ ，因为$ w_{k+1}$ 是$ D_{k+1}$ 中入度为0的点，而在$ D_{k}$ 中这个点入度并不为0，也就是删去$ w_k$ 导致了$ w_{k+1}$ 的入度变成0，也就是在$ D_{k}$ 中有边$ &lt;w_k,w_{k+1}&gt;$ ，因此在$ D_0$ 中有边$ &lt;w_k,w_{k+1}&gt;$ </p>
+<p>这实际上就是拓扑排序的过程，只不过由于单向连通DAG只有一个入度为0的点，所以每一次都只会排出一个点</p>
+<p>排出的点按顺序构成的$ \Gamma=w_0w_1\cdots w_{\big|V_{0}\big|-1}$ 就是要求的通路</p>
+<h2 id="对于一般图情况的构造"><a href="#对于一般图情况的构造" class="headerlink" title="对于一般图情况的构造"></a>对于一般图情况的构造</h2><p>也就是证明：对于$  D=&lt;V,E&gt;$ ，$ D$ 是单向连通图 可以推得 $ D$ 中存在经过每个顶点至少一次的通路<br>（复述下，在最开始就说了，不考虑$ D$ 中的自环和平行边）</p>
+<p>搬一下引理&lt;7&gt;：</p>
+<p>对于一张一般的单向连通有向图$ D=&lt;V,E&gt;$ </p>
+<p>设$ V’=V/\leftrightarrow$ （也就是$ V’$ 是$ V$ 关于“相互可达”关系的商集）</p>
+<p>设$ E’={&lt;V_u,V_v&gt;\ \big|\ V_u\in V’\ \wedge\ V_v\in V’\ \wedge\ (\ \exists u,v(&lt;u,v&gt;\in E\ \wedge\ u\in V_u\ \wedge\ v\in V_v)\ )}$ </p>
+<p>则图$ D’=&lt;V’,E’&gt;$ 一定是单向连通的DAG</p>
+<p>还需要补充很重要的一点：</p>
+<p><strong>补充</strong>：对于$ \forall V_u\in V’$ ，由定义其内部的点在$ D$ 中必然是相互可达的，并且存在一个回路，其起点和终点均为$ \forall u\in V_{u}$ ，并且经过$ V_u$ 中所有点（即强连通图的判定定理“对于有向图$ D=&lt;V,E&gt;$ ，$ D$ 是强连通图 当且仅当 $ D$ 中存在经过每个顶点至少一次的回路”），我们将这个回路写成$ \Gamma’_{V_u}(u)$ </p>
+<p>对于任何一张有向图$ D=&lt;V,E&gt;$ ：</p>
+<ol>
+<li><p>通过引理&lt;7&gt;的方法求出$ D’=&lt;V’,E’&gt;$ ，然后根据DAG情况的构造得到$ \Gamma_W=W_0W_1\cdots W_{\big|V’\big|-1}$ </p>
+</li>
+<li><p>我们从$ W_k$ 中取两点$ x_k,y_k$ （允许$ x_k=y_k$ ），由定义，无论怎么取，$ x_k\leftrightarrow y_k$ ，我们记$ x_k$ 到$ y_k$ 的通路为$ \Gamma (x_k,y_k)$ </p>
+</li>
+<li><p>因为$ &lt;W_k,W_{k+1}&gt;\in E’\ \Leftrightarrow\ \exists u\in W_k,v\in W_{k+1},u\to v$ （根据引理&lt;7&gt;里面的定义可知），我们记$ u\to v$ 的通路为$ \Gamma_D(u,v)$ </p>
+</li>
+</ol>
+<p>于是就可以构造出通路了$ \Gamma =\Gamma’<em>{W_0}(x_0)\Gamma(x_0,y_0)\Gamma_D (y_0,x_1)\ \Gamma’</em>{W_1}(x_1)\Gamma(x_1,y_1)\Gamma_D (y_1,x_2)\ \cdots$ </p>
+<p>其中$ \Gamma’<em>{W_k}(x_k)$ 的存在性由前面的“补充”得到，$ \Gamma(x</em>{k},y_{k})$ 由”2.”得到，$ \Gamma_D(y_k,x_{k+1})$ 的存在性由“3.”得到</p>
+<p>这个通路可以看作是：“遍历强连通分量内点，在强连通分量内找到前往下一个强连通分量的出口，从出口到下一个强连通分量”的过程</p>
+<p>$ \Gamma’_{W_k}$ 保证了$ D$ 中每一个点都被遍历到了</p>
+<p>构造完毕</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>整个证明的流程就是如图了</p>
+<img src="单向连通图判定定理的证明资源库/截屏2021-03-11 21.09.08.png" style="zoom:50%;" />
+
+
+
+<h2 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h2><p>实际上想到“遍历强连通分量内点，在强连通分量内找到前往下一个强连通分量的出口，从出口到下一个强连通分量”并没有花费太长时间，整个证明过程中最花时间的有两个部分：</p>
+<ol>
+<li><p>证明“DAG必然存在入度为0的结点”，也就是引理&lt;4&gt;</p>
+<p>这个结论非常显然，显然到对它的证明需要3个引理支撑</p>
+<p>（当然也有可能是我没有想到更好的办法说明，欢迎大家交流。事实上我也百度了下，好像没有查到有关的严格证明）</p>
+</li>
+<li><p>将想法写成相对严谨的语言</p>
+<p>就像前面说的，想到“遍历强连通分量内点，在强连通分量内找到前往下一个强连通分量的出口，从出口到下一个强连通分量”并没有花费我太多时间，我也相信大多数ACMer能很快地想到这个做法。但是怎么使用足够严谨地描述这个过程就很头疼了。最后这个文章的效果可能也有些“不说人话”了233</p>
+</li>
+</ol>
+<p>这玩意花了我快5个小时、写了279行是我没想到的。。。大意了啊</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/11/test/" data-id="ckm51rpmc0001gha61lu99oyh" data-title="test" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/11/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/11/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
